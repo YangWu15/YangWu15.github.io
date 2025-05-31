@@ -9,12 +9,12 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Yang"
+title                    : # ""
 title_separator          : "-"
 name                     : &name "Your Name"
 description              : &description "personal description"
 url                      : https://YangWu15.github.io
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
+baseurl                  : # "" # the subpath of your site, e.g. "/blog"
 repository               : "YangWu15/YangWu15.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
