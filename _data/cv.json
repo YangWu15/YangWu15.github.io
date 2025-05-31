@@ -1,10 +1,10 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
+    "name": "Yang Wu",
+    "email": "5277863@gmail.com",
     "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "website": "https://yangwu15.github.io",
+    "summary": "",
     "location": {
       "address": "",
       "postalCode": "",
@@ -33,21 +33,21 @@
   "work": [],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
-      "gpa": null,
+      "institution": "Soochow University",
+      "area": "B.S. in Mathematics",
+      "studyType": "focus on Dynamical System and Mathematical Modeling",
+      "startDate": "2022",
+      "endDate": "2026",
+      "gpa": 4.0/4.0,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
+      "institution": "Soochow University",
+      "area": "B.A. in Music Composition",
       "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
-      "gpa": null,
+      "startDate": "2022",
+      "endDate": "2026",
+      "gpa": 4.0/4.0,
       "courses": []
     },
     {
