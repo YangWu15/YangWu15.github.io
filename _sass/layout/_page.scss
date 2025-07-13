@@ -17,11 +17,11 @@
 }
 
 .page {
-  @include breakpoint($large) {
-    @include span(10 of 12);
-    @include pre(1 of 12);
-    @include post(1 of 12);
-  }
+  /* REMOVED sidebar-specific grid includes */
+  /* ADDED standard centering */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px; /* Adjust this value as needed */
 
   .page__inner-wrap {
     @include full();
