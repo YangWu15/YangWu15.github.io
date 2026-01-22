@@ -15,7 +15,7 @@ name: &name "Yang Wu"
 description: &description "A little bit about me."
 url: https://YangWu.github.io
 baseurl: "" # the subpath of your site, e.g. "/blog"
-repository: "YangWu15/YangWu.github.io"
+repository: "YangWu15/YangWu15.github.io"
 
 # Site Author
 author:
