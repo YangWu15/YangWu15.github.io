@@ -4,8 +4,12 @@ title: "About Me"
 author_profile: true
 ---
 
-Hello! My name is Yang Wu. Welcome to my personal website.
+Hello! My name is Yang Wu.
 
-I'm interested in [Your Interests]. I'm currently working on [Your Projects].
+I'm an undergrad double majoring in Mathematics and Music Composition. 
 
-You can find my publications, thoughts, and CV in the links above. You can also find me on [GitHub](https://github.com/your-github) and [Twitter](https://twitter.com/your-twitter).
+My research interest lies between theoretical neuroscience and computational cognitive science. 
+
+I'm currently working with [James Whittington](https://www.jcrwhittington.com/), [Ryan Badman](https://kempnerinstitute.harvard.edu/people/our-people/ryan-badman/), and [Marcelo Mattar](https://www.mattarlab.com/) on three seperate computational neuroscience projects.
+
+
