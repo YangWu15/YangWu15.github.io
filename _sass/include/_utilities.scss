@@ -465,6 +465,25 @@ body:hover .visually-hidden button {
   }
 }
 
+/* ==========================================================================
+   Fix for content being too close to the edge
+   ========================================================================== */
+
+.page, .page__content, .archive {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* On large screens, we can remove the extra padding if the layout handles it */
+@include breakpoint($large) {
+  .page, .page__content, .archive {
+     /* Optional: Uncomment the lines below if you want less padding on big screens */
+     /* padding-left: 0; */
+     /* padding-right: 0; */
+  }
+}
+
 
 /*
    Footnotes
