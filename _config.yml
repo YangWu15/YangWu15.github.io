@@ -13,19 +13,19 @@ title: "Yang Wu"
 title_separator: "-"
 name: &name "Yang Wu"
 description: &description "A little bit about me."
-url: https://YangWu15.github.io
+url: https://YangWu.github.io
 baseurl: "" # the subpath of your site, e.g. "/blog"
-repository: "YangWu15/YangWu15.github.io"
+repository: "YangWu15/YangWu.github.io"
 
 # Site Author
 author:
   avatar: "profile.png"
   name: "Yang Wu"
-  bio: "Welcome to my personal page!"
+  bio: ""
   email: "5277863@gmail.com"
   # Add or remove social media links as you like
-  twitter: "your-twitter"
-  github: "your-github"
+  bluesky: "https://bsky.app/profile/yangwu0829.bsky.social"
+  linkedin: "www.linkedin.com/in/yangwu-"
 
 # Reading Files
 include:
