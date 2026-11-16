@@ -472,21 +472,20 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 		width: 1060px;
 	}
 
-/* Home page (about): text column with the photo beside it, and more
-   breathing room than the theme's line-height of 1 (from reset.css). */
+/* Home page (about): one centered column with the full photo on top, and
+   more breathing room than the theme's line-height of 1 (from reset.css). */
 #content.home-page {
-	position: relative;
-	width: 700px;            /* 700 + 20 + 380 = the 1100px layout */
-	padding-right: 380px;    /* the photo column */
+	width: 760px;
+	margin-left: auto;
+	margin-right: auto;
 	line-height: 1.6;
 }
 
 .home-page img.portrait {
-	position: absolute;
-	top: 26px;
-	right: 60px;
-	width: 240px;
-	height: 300px;
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0.4em 0 1.6em;
 	border-radius: 6px;
 }
 
