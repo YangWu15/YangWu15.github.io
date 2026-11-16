@@ -472,9 +472,9 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 		width: 1060px;
 	}
 
-/* Home page (about): one centered column with the photo at the bottom, and
+/* Home page and blog posts (.reading): one centered column, and
    more breathing room than the theme's line-height of 1 (from reset.css). */
-#content.home-page {
+#content.reading {
 	width: auto;
 	max-width: 860px;
 	margin-left: auto;
@@ -482,7 +482,7 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	line-height: 1.6;
 }
 
-.home-page img.portrait {
+.reading img.portrait {
 	display: block;
 	width: 100%;
 	max-width: 420px;
@@ -491,24 +491,24 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	border-radius: 6px;
 }
 
-.home-page p {margin: 0 0 1em;}
+.reading p {margin: 0 0 1em;}
 
-.home-page h2 {
+.reading h2 {
 	line-height: 1.25;
 	margin: 1.6em 0 0.6em;
 }
 
-.home-page ul {margin: 0.4em 0 1.4em 1.2em;}
-.home-page li {margin-bottom: 0.8em;}
-.home-page li p {margin: 0;}
+.reading ul {margin: 0.4em 0 1.4em 1.2em;}
+.reading li {margin-bottom: 0.8em;}
+.reading li p {margin: 0;}
 
-.home-page hr {
+.reading hr {
 	border: 0;
 	border-top: 1px dotted #8A887B;
 	margin: 2em 0 1.4em;
 }
 
-.home-page hr + h2 {margin-top: 0;}
+.reading hr + h2 {margin-top: 0;}
 
 /* Fit any screen: the theme's fixed widths become maximums, so the layout
    shrinks on a phone instead of the phone shrinking the whole page. */
@@ -533,5 +533,5 @@ img {max-width: 100%; height: auto;}
 	#banner h1 {font-size: 2.6em !important;}
 	#banner, #contentinfo {padding-left: 16px; padding-right: 16px;}
 	#content {padding: 12px 16px;}
-	.home-page ul {margin-left: 1em;}
+	.reading ul {margin-left: 1em;}
 }

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>How I will approach studying “how neuronal networks support mental simulation”</title>
+        <meta name="google-site-verification" content="bFcP7tOVIKTMZQiPcNQwfMZL22stFFBA_LX7EGponGU" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Pelican" />
+        <link rel="stylesheet" href="https://YangWu15.github.io/theme/css/main.css?v=023e4a0a" type="text/css" />
+        <style>
+            /* 1. RESTORED PAGE HEIGHT */
+            body {
+                /* This brings the whole page down to a normal looking height */
+                margin-top: 50px !important; 
+            }
+
+            /* 2. HEADER STYLES */
+            #banner h1 {
+                font-size: 3.5em !important; 
+                margin-top: 0 !important;
+                margin-bottom: 10px !important;
+                line-height: 1.2;
+            }
+            #banner {
+                padding-top: 0 !important;
+            }
+
+            /* 3. FOOTER LINKS STYLING */
+            .footer-link {
+                margin: 0 8px; /* Spacing between Bluesky and LinkedIn */
+                text-decoration: none; 
+                color: #555; 
+                font-size: 0.9em;
+            }
+            .footer-link:hover {
+                color: #000;
+            }
+        </style>
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://YangWu15.github.io/index.html">Yang Wu </a></h1>
+                <nav>
+                    <a href="/index.html">about</a>&nbsp;
+                    <a href="/blog.html">blog</a>&nbsp;
+                    <a href="/pages/cv.html">cv</a>&nbsp;
+                </nav>
+        </header><section id="content" class="body reading">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://YangWu15.github.io/how-i-will-approach-studying-how-neuronal-networks-support-mental-simulation.html" rel="bookmark"
+           title="Permalink to How I will approach studying “how neuronal networks support mental simulation”">How I will approach studying “how neuronal networks support mental simulation”</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+</footer><!-- /.post-info -->      <p>In neuroscience and machine learning, we often frame mental simulation as: first learn a world model (a set of parameters that accurately reflects the structure of the external world), then query it with various possible actions, thereby knowing “how rewarding if I do this”. One repeats this procedure to simulate possible futures, aiming to maximize reward. Such frameworks operationalize mental simulative cognition as a reinforcement learning (RL) agent with a reward objective and a spatial navigation task. However, I can volitionally imagine myself fishing on a cliff and driving that imagination anywhere I want while lying on my bed in reality, without an explicit reward I’m maximizing or an immediate task. In such a scenario, what is the underlying principle that decides what gets simulated and how do neuronal networks support this? Below I demonstrate how I would go about this topic with an experiment design and associative memory networks modeling. Importantly, I use associative memory network here to derive possible neural algorithms that produce behaviors consistent with the biological experiment, not to claim that the neurons are wired in such a way.</p>
+<p>While mental simulative cognition is also used for non-spatial abstract reasoning, to operationalize, I narrow it down to “spatial navigation” here. In spatial navigation research, a possible neural substrate for mental simulative cognition is hippocampal replay (when hippocampus reactivates representations of locations where the animal is not currently in), because it can represent paths that the animal never took, such as short cut between paths it knows (Gupta et al., 2010). So I use replay in non-rewarded environments as a proxy of situations where we imagine hypothetical experiences and thoughts detached from our current sensory experience. Understanding such cognition is important because it helps us flexibly solve problems, generate new concepts, and it relates to fundamental functions of the hippocampus, e.g. planning, memory consolidation and retrieval (Comrie et al. 2022).</p>
+<p>In rewarded spatial navigation tasks, place cells representing location where the animal has been repeatedly rewarded are significantly more likely to be reactivated during hippocampal replay. Theory has proposed an underlying principle for such prioritized replay in rewarded environments – each memory’s priority in replay is ranked by ‘how much replaying it would improve future navigation’ times ‘how likely the animal is going to get there again’. The improvement of future navigation is measured in reward, so with no reward the theory gives no reason to replay one location over another (Mattar &amp; Daw, 2018). However, let animals explore an open field with no reward or task, when resting, hippocampal representations reactivation still happens (McNamara et al., 2014). But previous research only tells us it is stronger after exploring a novel environment than a familiar one, not which location it prioritizes. Naturally we ask: what is the underlying principle of replay in non-rewarded environments then? Understanding where replay would prioritize in such a non-rewarded environment can shed light on what drives mental simulative cognition when there is no explicit task to complete.</p>
+<p>To test, I will first hypothesize possible principles that guide non-rewarded replay: (a) it is a random walk, (b) it follows where the animal spent its time, or (c) it follows information density, in this experiment it means how much spatial structure (edges, features) there is per unit of space. First let an animal run in an ordinary open field with one stone in the corner, with no reward or task given. This is to let the animal encode memories of locations on the open field: the spatial structure, floor, edges of the open field, and the peculiar stone. Note that during this physical exploration process, the time spent in each location might confound with information density, as a curious animal might linger around the stone, extending the time spent there. To resolve this confounder, we should instead measure how much reactivation a representation of ordinary location gets for the time spent there, and ask whether the stone location gets more reactivation than the time spent there predicts, even after the stone becomes familiar.</p>
+<p>If non-rewarded replay is indeed guided by information density, it should prioritize place cells reactivation near the stone location such that it exceeds what the time spent near stone predicts. In contrast, (a) predicts no preferred location during replay and (b) predicts that reactivation follows time spent wherever that is, so the stone gets only as much as its time predicts. Such an experiment could sufficiently falsify the other two hypotheses while letting only one survive.</p>
+<p>Hypothetically, once we’ve confirmed that it is (c) information density prioritizing the replay of certain locations in non-rewarded environments, a natural next step is to ask: what neural algorithm can produce such prioritization? Here I showcase how modeling provides an algorithmic description for how the neuronal network prioritizes information density. In associative memory networks, memory retrieval is done by adjusting its neural state to minimize an energy, given by a function that takes in its neural state and outputs an energy measure for it to minimize. We visualize this process as a marble, representing the neural state of the network, rolling down between mountains and valleys (the energy landscape formed by the function). Associative memory networks have been used to model hippocampal replay. In Spens &amp; Burgess 2024, they use an associative memory network retrieving a static memory each time to model hippocampal replay. Yet, replay is sequential, not just one static memory a typical associative memory network retrieves. Recent sequence associative memory networks advancement (Chaudhry et al. 2023) allow us to align the model to the sequential nature of hippocampal replay in spatial navigation. Importantly, this connects my experience in sequence memory research with Dr. Whittington and my interest in modeling mental simulative cognition with associative memory networks.</p>
+<p>In associative memory networks, we can pre-build each memory into the network, analogous to the animal encoding memories of the open field during physical exploration. Notably, how we write the memory encoding rules might bias the result, we should therefore not set by hand how much spatial structure and time spent each memory contains. Instead, we can train the network on the recorded experiment: at each moment the network receives what the animal senses from where it is at. Locations lingered longer therefore got more training, and stone location gives richer input. Then train two control versions, one with equal time spent at every location and one with the stone removed from the input, and ask which network produces memory retrieval consistent with the information-seeking replay we found in our hypothetical experiment . The retrieved memory of associative memory networks is analogous to reactivated hippocampus representations at rest. Crucially, associative memory networks can help us be as analogous as possible to our non-rewarded environments experiment and also the nature of mental simulative cognition. Because its objective of minimizing energy measure depends on the network itself internally, unlike RL which tries to maximize a reward that comes from an external environment.</p>
+<p>The experiment pinned down a principle guiding hippocampus reactivation in non-reward environments. And the modeling elucidates what neural algorithm gives rise to such a principle. By doing so we step towards a mathematical understanding of what guides hippocampus reactivation in non-rewarded environments, providing a possible working mechanism of mental simulative cognition.</p>
+<hr>
+<p><strong>Citations</strong></p>
+<ul>
+<li>Chaudhry, H. T. et al. (2023). Long sequence Hopfield memory. NeurIPS, 36.</li>
+<li>Comrie, A. E. et al. (2022). Imagination as a fundamental function of the hippocampus. Phil. Trans. R. Soc. B, 377, 20210336.</li>
+<li>Gupta, A. S. et al. (2010). Hippocampal replay is not a simple function of experience. Neuron, 65, 695–705.</li>
+<li>Mattar, M. G. &amp; Daw, N. D. (2018). Prioritized memory access explains planning and hippocampal replay. Nat. Neurosci., 21, 1609–1617.</li>
+<li>McNamara, C. G. et al. (2014). Dopaminergic neurons promote hippocampal reactivation and spatial memory persistence. Nat. Neurosci., 17, 1658–1660.</li>
+</ul>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+
+        <footer id="contentinfo" class="body" style="
+            display: flex; 
+            justify-content: flex-end; /* This pushes the whole block to the right */
+            margin-top: 50px; 
+            border-top: 1px solid #eee; 
+            padding-top: 15px;">
+                
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    
+                    <div class="social-links" style="margin-bottom: 5px;">
+                                <a href="https://bsky.app/profile/yangwu0829.bsky.social" class="footer-link">Bluesky</a>
+                                <a href="https://www.linkedin.com/in/yangwu-/" class="footer-link">LinkedIn</a>
+                    </div>
+
+                    <address id="about" class="vcard body" style="margin: 0; font-size: 1em;">
+                        Proudly powered by <a href="http://getpelican.com/">Pelican</a>.
+                    </address>
+                </div>
+
+        <script>
+        // Force all external links to open in a new tab
+        document.querySelectorAll('a').forEach(link => {
+                if (link.hostname !== window.location.hostname) {
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                }
+        });
+        </script>
+
+        </footer></body>
+</html>
